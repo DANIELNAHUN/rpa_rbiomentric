@@ -11,7 +11,7 @@ import extractor as ex
 keyboard = Controller()
 
 time.sleep(1)
-program = "src/program.png"
+program = "src/program.jpg"
 
 #ABRE EL PROGRAMA BUSCANDO EN EL ESCRITORIO
 if lackey.exists(program):
@@ -31,3 +31,4 @@ else:
   else:
     pyautogui.alert('Por favor instale el Programa o agreguelo como acceso directo en el Escritorio :).')
     time.sleep(10)
+
