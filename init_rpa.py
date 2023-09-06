@@ -29,6 +29,5 @@ else:
     ex.extraer_data()
   #SI NO ENCUENTRA EL PROGRAMA EN EL ESCRITORIO
   else:
-    pyautogui.alert('Por favor instale el Programa o agreguelo como acceso directo en el Escritorio :).')
-    time.sleep(10)
+    pyautogui.alert('Por favor instale el Programa o agreguelo como acceso directo en el Escritorio :).', title="RPA for Reporte Biometrico", timeout=10)
 

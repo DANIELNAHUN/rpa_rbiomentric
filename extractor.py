@@ -18,3 +18,5 @@ def extraer_data():
       print(f"La oficina de {oficina} existe")
     else:
       print(f"No se encontro la oficina {oficina}")
+
+  pyautogui.alert('Se termino de Analizar las Oficinas', title="RPA for Reporte Biometrico", timeout=3)
