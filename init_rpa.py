@@ -2,6 +2,7 @@ import os
 import time
 
 import lackey
+import subprocess
 import pyautogui
 from lackey import *
 from pynput.keyboard import Controller, Key
@@ -12,7 +13,8 @@ keyboard = Controller()
 
 time.sleep(1)
 program = "src/program.jpg"
-
+name_proceess = "Att.exe"
+subprocess.run(["taskkill","/F","/IM",name_proceess,"/T"])
 #ABRE EL PROGRAMA BUSCANDO EN EL ESCRITORIO
 if lackey.exists(program):
   lackey.doubleClick(program)
