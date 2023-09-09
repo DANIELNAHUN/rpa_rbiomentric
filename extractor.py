@@ -44,20 +44,18 @@ def extraer_data():
 
   with open('files/noDescargados.txt','a') as txt:
     txt.write(""+'\n')
-    txt.write("Informe del dia: "+ datetime.datetime.now().strftime("%Y-%m-%d"))
-    txt.write("Las oficinas que no se descargaron son:")
+    txt.write("INFORME DEL DIA: "+ datetime.datetime.now().strftime("%Y-%m-%d")+'\n')
+    txt.write("Las oficinas que no se descargaron son:"+'\n')
     for oficina in of_nodescargados:
       oficina_name, oficina_ext = oficina.split(".")
-      txt.write("- "+oficina_name)
-    txt.write("")
+      txt.write("  - "+oficina_name+'\n')
     txt.write(""+'\n')
 
   with open('files/Descargados.txt','a') as txt:
     txt.write(""+'\n')
-    txt.write("Informe del dia: "+ datetime.datetime.now().strftime("%Y-%m-%d"))
-    txt.write("Las oficinas que se descargaron son:")
+    txt.write("INFORME DEL DIA: "+ datetime.datetime.now().strftime("%Y-%m-%d")+'\n')
+    txt.write("Las oficinas que se descargaron son:"+'\n')
     for oficina in of_descargadas:
       oficina_name, oficina_ext = oficina.split(".")
-      txt.write("- "+oficina_name)
-    txt.write("")
+      txt.write("- "+oficina_name+'\n')
     txt.write(""+'\n')
