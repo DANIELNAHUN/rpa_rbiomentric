@@ -14,8 +14,27 @@ keyboard = Controller()
 time.sleep(1)
 program = "src/program.jpg"
 name_proceess = "Att.exe"
+
+#CERRANDO APLICACION PARA EVITAR ERRORES
 subprocess.run(["taskkill","/F","/IM",name_proceess,"/T"])
-#ABRE EL PROGRAMA BUSCANDO EN EL ESCRITORIO
+
+#BUSCANDO IPS PARA CONECTARSE A LA VPN
+ips_sedes =[
+  {"ip":"181.65.232.26","sede":"ILO HFC"},
+  {"ip":"181.65.232.27","sede":"ILO HFC"},
+  {"ip":"181.65.232.28","sede":"ILO HFC"},
+  {"ip":"181.65.232.29","sede":"ILO HFC"},
+  {"ip":"181.65.232.30","sede":"ILO HFC"},
+]
+for ip_data in ips_sedes:
+  command = ['ping', '-n', '1', ip_data['ip']]
+  response_ip = subprocess.call(command)
+  if response_ip == 0:
+    print(f'La direccion IP:{ip_data["ip"]} responde')
+  else:
+    print(f'La direccion IP {ip_data["ip"]} no responde')
+
+# ABRE EL PROGRAMA BUSCANDO EN EL ESCRITORIO
 if lackey.exists(program):
   lackey.doubleClick(program)
   time.sleep(2)
